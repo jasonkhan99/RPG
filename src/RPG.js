@@ -1,9 +1,5 @@
-let statList = new StatList;
-let inventoryEquip = new InventoryEquip;
-let characterCreator = new CharacterCreator;
-
 // character creation
-export function CharacterCreator(name, profile, inventory, stats, experience) {
+export function CharacterCreator(name, profile, inventory, stats) {
   this.name = name;
   this.profile = profile;
   this.inventory = [];
@@ -25,32 +21,36 @@ CharacterCreator.prototype.addStatList = function() {
 }
 
 CharacterCreator.prototype.addInventory = function() {
-  this.inventory.push("Power Fist", "Old Tire Armor");
   if (this.inventory.includes("Power Fist")) {
     this.stats.strength += 50;
     this.stats.defense -= 50;
+    this.inventory.push("Power Fist");
   } else if (this.inventory.includes("Key Board")) {
     this.stats.defense += 50;
     this.stats.speed -= 50;
+    this.inventory.push("Key Board");
   } else if (this.inventory.includes("USB Rifle")) {
     this.stats.speed += 50;
     this.stats.health -= 50;
+    this.inventory.push("USB Rifle");
   } else if (this.inventory.includes("Old Tire Armor")) {
     this.stats.speed += 50;
     this.stats.defense -= 50;
+    this.inventory.push("Old Tire Armor");
   } else if (this.inventory.includes("Scrap Metal Armor")) {
     this.stats.health += 50;
     this.stats.speed -= 50;
+    this.inventory.push("Scrap Metal Armor");
   } else if (this.inventory.includes("Power Armor")) {
     this.stats.defense +=50;
     this.stats.speed -=50;
+    this.inventory.push("Power Armor");
   }
 }
-
 // inventory 
-function InventoryEquip(armor, weapon, trinket, consumables) {
-  this.armor = armor;
+export function InventoryEquip(weapon, armor, trinket, consumables) {
   this.weapon = weapon;
+  this.armor = armor;
   this.trinket = trinket;
   this.consumables = consumables;
 }

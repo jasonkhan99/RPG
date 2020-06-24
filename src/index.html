@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <script type="text/javascript" src="bundle.js"></script>
-  <title>RPG</title>
-</head>
+  <head>
+    <title>RPG</title>
+  </head>
 
-<body>
-  
-</body>
+  <body>
+    <form id="character-creation">
+      <div class="form-group">
+        <label for="name">Enter Character Name</label>
+        <input id="name" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <h3>Select Class:</h3>
+        <select class="form-control" id="profile">
+          <option>Thug</option>
+          <option>Hacker</option>
+          <option>Gun Slinger</option>
+        </select>
+        <h3>Select Weapon:</h3>
+        <select class="form-control" id="weapon">
+          <option>Power Fist</option>
+          <option>Key Board</option>
+          <option>USB Rifle</option>
+        </select>
+        <h3>Select Armor:</h3>
+        <select class="form-control" id="armor">
+          <option>Old Tire Armor</option>
+          <option>Scrap Metal Armor</option>
+          <option>Power Armor</option>
+        </select>
+      </div>
+      <button id="submit" class="btn-danger">Create Character</button>
+    </form>
+  </body>
 
 </html>

@@ -1,12 +1,12 @@
-# _PROJECT NAME_
+# RPG
 
-#### _SHORT DESCR_
+#### RPG game build your character and enjoy the world
 
-#### By _**YOUR NAME HERE**_
+#### By **Jason Khan** **Jerrod Styrk**
 
 ## Description
 
-_Long deiscription._
+This game will allow you to build a character to your desire
 
 ### Specs
 | Spec | Input | Output |

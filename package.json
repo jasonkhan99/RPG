@@ -1,17 +1,17 @@
 {
-  "name": "project-name",
+  "name": "rpg",
   "version": "1.0.0",
   "description": "description-here",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",
-    "start": "npm run build & webpack-dev-server --open --mode development",
+    "start": "npm run build; webpack-dev-server --open --mode development",
     "lint": "eslint src/*.js",
     "test": "jest",
     "debug": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand"
   },
   "keywords": [],
-  "author": "your-name-here",
+  "author": "Jason Khan",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.6.4",

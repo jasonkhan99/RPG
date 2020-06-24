@@ -6,34 +6,55 @@
 
 ## Description
 
-This game will allow you to build a character to your desire
+This game will allow you to build a character to your desired specifications. Choose your class, inventory and path to follow. Happy hunting.
 
 ### Specs
-| Spec | Input | Output |
-| :-------------     | :------------- | :------------- |
+| Behavior | Input | Output |
+|----------|-------|--------|
+| The Program will take a user inputted name and create a character object | Jason Khan | Name: Jason Khan |
+| The Program will allow user to select a class for a character object | select: warrior | class: warrior |
 
 
 ## Setup/Installation Requirements
 
-* _Visit the following link: _
-* _Clone the repository to your desired directory._
-* _OR_
-* _Visit here: _
+* [Github repo]()
+* To open via Download click clone or download
+* Double click index.html to open in web browser
+* Or clone the directory onto your computer
+* Then open it using your prefered code/ text editor
+* Open index.html with prefered browser
 
 
 ## Known Bugs
 
-_ _
+None known 
+
 ## Support and contact details
 
-_Contact me at...._
+For support please contact <jstyrk@citadel.edu>
 
 ## Technologies Used
 
-_Technology!_
+* HTML
+* CSS
+* jQuery
+* JavaScript
+* webpack
+* webpack-cli
+* style-loader
+* webpack-dev-server
+* eslint
+* eslint-loader
+* webpack-plugin
+* uglifyjs-webpack-plugin
+* html-webpack-plugin
+* clean-webpack-plugin
+* popper.js
+* bootstrap
+
 
 ### License
 
 *GPL license distribution*
 
-Copyright (c) 2020 **_Your name(s)_**
+Copyright (c) 2020 **Jason Khan** **Jerrod Styrk**

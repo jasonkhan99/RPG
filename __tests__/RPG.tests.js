@@ -2,11 +2,11 @@ import { CharacterCreator } from './../src/RPG.js';
 import { StatList } from './../src/RPG.js';
 
 describe('CharacterCreator', () => {
-  const character = new CharacterCreator("Jason", "Hacker");
+  const character = new CharacterCreator("Jason", "Gun Slinger");
 
   test('should create a character with user selected input', () => {
     expect(character.name).toEqual("Jason");
-    expect(character.profile).toEqual("Hacker");
+    expect(character.profile).toEqual("Thug");
     expect(character.inventory).toEqual([]);
     expect(character.stats).toEqual(undefined);
     expect(character.experience).toEqual(0);
@@ -14,8 +14,9 @@ describe('CharacterCreator', () => {
 
   test('should assign an object to character stats', () => {
     character.addStatList();
-    expect(character.stats).toEqual({health: 100, defense: 100, strength: 100, speed: 100});
     expect(character.stats.health).toEqual(100);
+    expect(character.stats.defense).toEqual(100);
+    expect(character.stats.strength).toEqual(150);
   });
 });
 

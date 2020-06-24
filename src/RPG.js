@@ -21,15 +21,17 @@ export function CharacterCreator(name, profile, inventory, stats, experience) {
 //   }
 // }
 
-CharacterCreator.prototype.addStatList = function(statValue) {
-  if (this.profile === "Hacker") {
+CharacterCreator.prototype.addStatList = function() {
+  if (this.profile === "Thug") {
+    let thug = new StatList(100, 100, 150, 50);
+    this.stats = thug;
+  } else if (this.profile === "Hacker") {
     let hacker = new StatList(100, 100, 100, 100);
-    this.stats = hacker
+    this.stats = hacker;
+  } else if (this.profile === "Gun Slinger") {
+    let gunSlinger = new StatList(100, 50, 100, 150);
+    this.stats = gunSlinger;
   }
-  // let thug = (100, 100, 150, 50)
-  // let hacker = (100, 100, 100, 100)
-  // let gunSlinger = (100, 50, 100, 150)
-  // this.stats.push(statList)
 }
 
 // inventory 

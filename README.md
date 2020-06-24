@@ -12,7 +12,13 @@ This game will allow you to build a character to your desired specifications. Ch
 | Behavior | Input | Output |
 |----------|-------|--------|
 | The Program will take a user inputted name and create a character object | Jason Khan | Name: Jason Khan |
-| The Program will allow user to select a class for a character object | select: warrior | class: warrior |
+| The Program will allow user to select a class for a character object | Select: warrior | Class: warrior |
+| The Program will allow user to select a weapon for a character object | Select: sword | Weapon: sword |
+| The Program will allow user to select armor for a character object | Select: shield | Armor: shield |
+| The Program will determine an object stats with values of Health, Strength, Defense and Speed based on class | Class: warrior | Health = 10, Strength = 12, Defense = 12, Speed = 6 |
+| The Program will increase or decrease stats based on armor | Armor: sheild | Defense + 2 |
+| The Program will increase or decrease stats based on weapon | Weapon: sword | Strength + 2 |
+
 
 
 ## Setup/Installation Requirements

@@ -11,16 +11,6 @@ export function CharacterCreator(name, profile, inventory, stats, experience) {
   this.experience = 0;
 }
 
-// CharacterCreator.prototype.addProfile = function(type) {
-//   if(this.profile === thug) {
-//     this.profile = "Thug";
-//   } else if (this.profile === hacker) {
-//     this.profile = "Hacker";
-//   } else if (this.profile === gunSlinger) {
-//     this.profile = "Gun Slinger";
-//   }
-// }
-
 CharacterCreator.prototype.addStatList = function() {
   if (this.profile === "Thug") {
     let thug = new StatList(100, 100, 150, 50);
@@ -34,6 +24,29 @@ CharacterCreator.prototype.addStatList = function() {
   }
 }
 
+CharacterCreator.prototype.addInventory = function() {
+  this.inventory.push("Power Fist", "Old Tire Armor");
+  if (this.inventory.includes("Power Fist")) {
+    this.stats.strength += 50;
+    this.stats.defense -= 50;
+  } else if (this.inventory.includes("Key Board")) {
+    this.stats.defense += 50;
+    this.stats.speed -= 50;
+  } else if (this.inventory.includes("USB Rifle")) {
+    this.stats.speed += 50;
+    this.stats.health -= 50;
+  } else if (this.inventory.includes("Old Tire Armor")) {
+    this.stats.speed += 50;
+    this.stats.defense -= 50;
+  } else if (this.inventory.includes("Scrap Metal Armor")) {
+    this.stats.health += 50;
+    this.stats.speed -= 50;
+  } else if (this.inventory.includes("Power Armor")) {
+    this.stats.defense +=50;
+    this.stats.speed -=50;
+  }
+}
+
 // inventory 
 function InventoryEquip(armor, weapon, trinket, consumables) {
   this.armor = armor;
@@ -42,22 +55,9 @@ function InventoryEquip(armor, weapon, trinket, consumables) {
   this.consumables = consumables;
 }
 // stat list
-export function StatList(health, defense, strength, speed) {
+function StatList(health, defense, strength, speed) {
   this.health = health;
   this.defense = defense;
   this.strength = strength;
   this.speed = speed;
-}
-
-StatList.prototype.CharacterStart = function(stats) {
-  let thug = (100, 100, 150, 50)
-  let hacker = (100, 100, 100, 100)
-  let gunSlinger = (100, 50, 100, 150)
-  if (characterCreator.profile === "thug") {
-    statlist.push(thug);
-  } else if (characterCreator.profile === "hacker") {
-    statlist.push(hacker);
-  } else if (characterCreator.profile === "gunSlinger") {
-    statlist.push(gunSlinger);
-  } 
 }

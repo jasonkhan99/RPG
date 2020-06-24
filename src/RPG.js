@@ -2,7 +2,7 @@ let statlist = new StatList;
 let inventoryEquip = new InventoryEquip;
 let characterCreator = new CharacterCreator;
 
-function CharacterCreator(name, profile, inventory, stats, experience) {
+export function CharacterCreator(name, profile, inventory, stats, experience) {
   this.name = name;
   this.profile = profile;
   this.inventory = [];
@@ -17,7 +17,7 @@ function InventoryEquip(armor, weapon, trinket, consumables) {
   this.consumables = consumables;
 }
 
-function StatList(health, defense, strength, speed) {
+export function StatList(health, defense, strength, speed) {
   this.health = health;
   this.defense = defense;
   this.strength = strength;
@@ -29,10 +29,10 @@ StatList.prototype.CharacterStart = function(stats) {
   let hacker = (100, 100, 100, 100)
   let gunSlinger = (100, 50, 100, 150)
   if (this.profile === thug) {
-    StatList.push(thug)
+    statList.push(thug);
   } else if (this.profile === hacker) {
-    StatList.push(hacker)
-  } else (this.profile === gunSlinger) {
-    StatList.push(gunSlinger)
+    statList.push(hacker);
+  } else if (this.profile === gunSlinger) {
+    statList.push(gunSlinger);
   } 
 }

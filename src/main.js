@@ -17,12 +17,9 @@ $(document).ready(function () {
     character.addStatList();
     character.addWeapon();
     character.addArmor();
-    const enemy = new EnemyNpc(100, 100, 80, 80);
     console.log(character);
     $("#character-creation").hide();
     $("#enemyInfo").show();
-    $("#enemyHealth").text(enemy.health);
-    $("#enemyStrength").text(enemy.strength);
     $("#characterDisplay").show();
     $("#actions").show();
     $("#currentName").text(character.name);
@@ -55,6 +52,12 @@ $(document).ready(function () {
       $("#actions").show();
       $("#inventoryDisplay").hide();
       $("#statDisplay").hide();
+    });
+    $("#attack-button").click(function() {
+      let enemy = new EnemyNpc(100, 100, 80, 80);
+      character.attack();
+      $("#enemyHealth").text(enemy.health);
+      $("#enemyStrength").text(enemy.strength);
     });
   });
 });

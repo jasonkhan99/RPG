@@ -47,20 +47,21 @@ CharacterCreator.prototype.addArmor = function() {
 }
 
 CharacterCreator.prototype.attack = function() {
-  let attackButton = document.getElementById('attack-button');
+  // let attackButton = document.getElementById('attack-button');
+  let enemy = new EnemyNpc(100, 100, 80, 80);
+  let playerAttack = Math.floor(Math.random() * 100);
+  enemy.health -= playerAttack;
+  return enemy.health;
+  // this.displayHealth();
 
-  let playerAttack = Math.floor(Math.random() * StatList.strength);
-  EnemyNpc.health -= playerAttack;
-  this.displayHealth();
+  // attackButton.disabled = true;
 
-  attackButton.disabled = true;
-
-  setTimeout(() => {
-    let enemyAttack = Math.floor(Math.random() * EnemyNpc.strength);
-    CharacterCreator.Statlist.health -= enemyAttack;
-    this.displayHealth();
-    attackButton.disabled = false;
-  }, 1000);
+  // setTimeout(() => {
+  //   let enemyAttack = Math.floor(Math.random() * enemy.strength);
+  //   this.stats.health -= enemyAttack;
+  //   this.displayHealth();
+  //   attackButton.disabled = false;
+  // }, 1000);
 }
 
 // EnemyNpc
@@ -69,12 +70,6 @@ export function EnemyNpc(health, defense, strength, speed) {
   this.defense = defense;
   this.strength = strength;
   this.speed = speed;
-}
-
-EnemyNpc.prototype.attack = function() {
-  let enemyAttack = Math.floor(Math.random() * EnemyNpc.strength);
-  CharacterCreator.Statlist.health -= enemyAttack;
-  this.displayHealth();
 }
 
 EnemyNpc.prototype.displayHealth = function() {
@@ -88,6 +83,7 @@ export function InventoryEquip(weapon, armor, trinket, consumables) {
   this.trinket = trinket;
   this.consumables = consumables;
 }
+
 // stat list
 function StatList(health, defense, strength, speed) {
   this.health = health;
@@ -96,3 +92,9 @@ function StatList(health, defense, strength, speed) {
   this.speed = speed;
 }
 
+// // Add Experience
+// function calculateExp() {
+//   let gainedExp = enemy.level * 100;
+//   let newExp = gainedExp + (CharacterCreator.this.experience);
+//   CharacterCreator.this.experience.push(newExp);
+// }

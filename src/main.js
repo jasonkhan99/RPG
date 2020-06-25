@@ -18,5 +18,6 @@ $(document).ready(function () {
     character.addWeapon();
     character.addArmor();
     console.log(character);
+    $("ul#output").append("<li>Name: " + inputtedName + "</li><li>Profile: " + inputtedProfile + "</li><li>Inventory</li><li>Stats</li><li>Experience: " + experience + "</li>");
   });
 });

@@ -18,7 +18,13 @@ $(document).ready(function () {
     character.addWeapon();
     character.addArmor();
     console.log(character);
-    $("ul#output").append("<li>Name: " + inputtedName + "</li><li>Profile: " + inputtedProfile + "</li><li><button id='showInventory' class='btn-success'>Inventory</button></li><li><button id='showStats' class='btn-primary'>Stats</li><li>Experience: " + experience + "</li>");
+    $("#characterDisplay").show();
+    $("#currentName").text(character.name);
+    $("#currentProfile").text(character.profile);
+    $("#currentInventory").html("<button id='showInventory' class='btn-success'>Inventory</button>");
+    $("#currentStats").html("<button id='showStats' class='btn-primary'>Stats</button>");
+    $("#currentExperience").text(character.experience);
+    // $("ul#output").append("<li>Name: " + inputtedName + "</li><li>Profile: " + inputtedProfile + "</li><li><button id='showInventory' class='btn-success'>Inventory</button></li><li><button id='showStats' class='btn-primary'>Stats</li><li>Experience: " + experience + "</li>");
     $("#showInventory").click(function() {
       $("#inventoryDisplay").toggle();
       $("#currentWeapon").text(character.inventory.weapon);

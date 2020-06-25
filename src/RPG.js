@@ -45,6 +45,15 @@ CharacterCreator.prototype.addArmor = function() {
     this.stats.speed -= 50;
   }
 }
+
+CharacterCreator.prototype.attack = function() {
+  let playerAttack = Math.floor(Math.random() * StatList.strength);
+  enemyNpc.health -= playerAttack;
+}
+
+// EnemyNpc
+
+
 // inventory 
 export function InventoryEquip(weapon, armor, trinket, consumables) {
   this.weapon = weapon;
@@ -59,3 +68,4 @@ function StatList(health, defense, strength, speed) {
   this.strength = strength;
   this.speed = speed;
 }
+

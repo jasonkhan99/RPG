@@ -23,7 +23,15 @@ $(document).ready(function () {
       $("#inventoryDisplay").toggle();
       $("#currentWeapon").text(character.inventory.weapon);
       $("#currentArmor").text(character.inventory.armor);
-
+      $("#currentTrinket").text(character.inventory.trinket);
+      $("#currentConsumable").text(character.inventory.consumable);
+    });
+    $("#showStats").click(function() {
+      $("#statDisplay").toggle();
+      $("#currentHealth").text(character.stats.health);
+      $("#currentDefense").text(character.stats.defense);
+      $("#currentStrength").text(character.stats.strength);
+      $("#currentSpeed").text(character.stats.speed);
     });
   });
 });

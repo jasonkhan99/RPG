@@ -20,8 +20,10 @@ $(document).ready(function () {
     console.log(character);
     $("ul#output").append("<li>Name: " + inputtedName + "</li><li>Profile: " + inputtedProfile + "</li><li><button id='showInventory' class='btn-success'>Inventory</button></li><li><button id='showStats' class='btn-primary'>Stats</li><li>Experience: " + experience + "</li>");
     $("#showInventory").click(function() {
-      $("#currentWeapon").text(characterInventory);
-      
+      $("#inventoryDisplay").toggle();
+      $("#currentWeapon").text(character.inventory.weapon);
+      $("#currentArmor").text(character.inventory.armor);
+
     });
   });
 });

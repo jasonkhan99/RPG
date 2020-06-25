@@ -17,9 +17,14 @@ $(document).ready(function () {
     character.addStatList();
     character.addWeapon();
     character.addArmor();
+    const enemy = new EnemyNpc(100, 100, 80, 80);
     console.log(character);
     $("#character-creation").hide();
+    $("#enemyInfo").show();
+    $("#enemyHealth").text(enemy.health);
+    $("#enemyStrength").text(enemy.strength);
     $("#characterDisplay").show();
+    $("#actions").show();
     $("#currentName").text(character.name);
     $("#currentProfile").text(character.profile);
     $("#currentInventory").html("<button id='showInventory' class='btn-success'>Inventory</button>");
@@ -28,6 +33,7 @@ $(document).ready(function () {
     $("#showInventory").click(function() {
       $("#characterDisplay").toggle();
       $("#inventoryDisplay").toggle();
+      $("#actions").hide();
       $(".returnFromScreen").html("<button class='btn-danger'>Go Back</button>");
       $("#currentWeapon").text(character.inventory.weapon);
       $("#currentArmor").text(character.inventory.armor);
@@ -37,6 +43,7 @@ $(document).ready(function () {
     $("#showStats").click(function() {
       $("#characterDisplay").toggle();
       $("#statDisplay").toggle();
+      $("#actions").hide();
       $(".returnFromScreen").html("<button class='btn-danger'>Go Back</button>");
       $("#currentHealth").text(character.stats.health);
       $("#currentDefense").text(character.stats.defense);
@@ -45,6 +52,7 @@ $(document).ready(function () {
     });
     $(".returnFromScreen").click(function() {
       $("#characterDisplay").show();
+      $("#actions").show();
       $("#inventoryDisplay").hide();
       $("#statDisplay").hide();
     });

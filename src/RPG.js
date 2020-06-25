@@ -47,21 +47,28 @@ CharacterCreator.prototype.addArmor = function() {
 }
 
 CharacterCreator.prototype.attack = function() {
+  let attackButton = document.getElementById('attack-button');
+
   let playerAttack = Math.floor(Math.random() * StatList.strength);
   EnemyNpc.health -= playerAttack;
   this.displayHealth();
-}
 
-CharacterCreator.prototype.displayHealth = function() {
-  document.getElementById('currentHealth').innerText = StatList.health;
+  attackButton.disabled = true;
+
+  setTimeout(() => {
+    let enemyAttack = Math.floor(Math.random() * EnemyNpc.strength);
+    CharacterCreator.Statlist.health -= enemyAttack;
+    this.displayHealth();
+    attackButton.disabled = false;
+  }, 1000);
 }
 
 // EnemyNpc
 export function EnemyNpc(health, defense, strength, speed) {
-  health = 100;
-  defense = 100;
-  strength = 80;
-  speed = 80;
+  this.health = health;
+  this.defense = defense;
+  this.strength = strength;
+  this.speed = speed;
 }
 
 EnemyNpc.prototype.attack = function() {

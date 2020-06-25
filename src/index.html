@@ -65,20 +65,21 @@
               <p><span class="returnFromScreen"></span></p>
             </div>
           </div>
+          <br>
+          <div id="actions">
+            <button id="attack-button" onclick="attack()">Attack</button>
+            <button id="heal-button" onclick="heal()">Heal</button>
+          </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" id="enemyInfo">
           <div class="card">
             <div id="enemyDisplay">
               <h4>Monster</h4>
-              <p>Health:<span id="enemyHealth"></span></p>
-              <p>Strength:<span id="enemyStrength"></span></p>
+              <p>Health: <span id="enemyHealth"></span></p>
+              <p>Strength: <span id="enemyStrength"></span></p>
             </div>
           </div>
         </div>
-      </div>
-      <div id="actions">
-        <button id="attack-button" onclick="attack()">Attack</button>
-        <button id="heal-button" onclick="heal()">Heal</button>
       </div>  
     </div>
   </body>

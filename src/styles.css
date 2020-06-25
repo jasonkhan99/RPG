@@ -1,4 +1,4 @@
-#inventoryDisplay, #statDisplay, #characterDisplay {
+#inventoryDisplay, #statDisplay, #characterDisplay, #enemyInfo, #actions {
   display: none;
 }
 

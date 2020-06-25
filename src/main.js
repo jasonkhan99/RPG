@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { CharacterCreator, InventoryEquip, EnemyNpc } from './RPG';
 
-$(document).ready(function () {
+$(document).ready(function() {
   $('form#character-creation').submit(function(event) {
     event.preventDefault();
     let inputtedName = $("#name").val();
@@ -12,8 +12,9 @@ $(document).ready(function () {
     let inputtedWeapon = $("#weapon").val();
     let inputtedArmor = $("#armor").val();
     let experience = 0;
-    const characterInventory = new InventoryEquip(inputtedWeapon, inputtedArmor);
-    const character = new CharacterCreator(inputtedName, inputtedProfile, characterInventory, experience);
+    let characterInventory = new InventoryEquip(inputtedWeapon, inputtedArmor);
+    let character = new CharacterCreator(inputtedName, inputtedProfile, characterInventory, experience);
+    let enemy = new EnemyNpc(100, 100, 100, 100);
     character.addStatList();
     character.addWeapon();
     character.addArmor();
@@ -54,8 +55,6 @@ $(document).ready(function () {
       $("#statDisplay").hide();
     });
     $("#attack-button").click(function() {
-      let enemy = new EnemyNpc(100, 100, 80, 80);
-      character.attack();
       $("#enemyHealth").text(enemy.health);
       $("#enemyStrength").text(enemy.strength);
     });

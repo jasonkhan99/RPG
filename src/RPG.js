@@ -48,10 +48,8 @@ CharacterCreator.prototype.addArmor = function() {
 
 CharacterCreator.prototype.attack = function() {
   // let attackButton = document.getElementById('attack-button');
-  let enemy = new EnemyNpc(100, 100, 80, 80);
   let playerAttack = Math.floor(Math.random() * 100);
   enemy.health -= playerAttack;
-  return enemy.health;
   // this.displayHealth();
 
   // attackButton.disabled = true;
@@ -70,10 +68,6 @@ export function EnemyNpc(health, defense, strength, speed) {
   this.defense = defense;
   this.strength = strength;
   this.speed = speed;
-}
-
-EnemyNpc.prototype.displayHealth = function() {
-  document.getElementById('enemyHealth').innerText = EnemyNpc.health;
 }
 
 // inventory 

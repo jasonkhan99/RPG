@@ -48,11 +48,31 @@ CharacterCreator.prototype.addArmor = function() {
 
 CharacterCreator.prototype.attack = function() {
   let playerAttack = Math.floor(Math.random() * StatList.strength);
-  enemyNpc.health -= playerAttack;
+  EnemyNpc.health -= playerAttack;
+  this.displayHealth();
+}
+
+CharacterCreator.prototype.displayHealth = function() {
+  document.getElementById('currentHealth').innerText = StatList.health;
 }
 
 // EnemyNpc
+export function EnemyNpc(health, defense, strength, speed) {
+  health = 100;
+  defense = 100;
+  strength = 80;
+  speed = 80;
+}
 
+EnemyNpc.prototype.attack = function() {
+  let enemyAttack = Math.floor(Math.random() * EnemyNpc.strength);
+  CharacterCreator.Statlist.health -= enemyAttack;
+  this.displayHealth();
+}
+
+EnemyNpc.prototype.displayHealth = function() {
+  document.getElementById('enemyHealth').innerText = EnemyNpc.health;
+}
 
 // inventory 
 export function InventoryEquip(weapon, armor, trinket, consumables) {

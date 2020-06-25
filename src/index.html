@@ -44,8 +44,8 @@
             <div id="characterDisplay">
               <p>Name: <span id="currentName"></span></p>
               <p>Profile: <span id="currentProfile"></span></p>
-              <p>Inventory <span id="currentInventory"></span></p>
-              <p>Stats <span id="currentStats"></span></p>
+              <p><span id="currentInventory"></span></p>
+              <p><span id="currentStats"></span></p>
               <p>Experience: <span id="currentExperience"></span></p>
             </div>
             <!-- <ul id="output">
@@ -55,16 +55,31 @@
               <p>Armor: <span id="currentArmor"></span></p>
               <p>Trinket: <span id="currentTrinket"></span></p>
               <p>Consumable: <span id="currentConsumable"></span></p>
+              <p><span class="returnFromScreen"></span></p>
             </div>
             <div id="statDisplay">
               <p>Health: <span id="currentHealth"></span></p>
               <p>Defense: <span id="currentDefense"></span></p>
               <p>Strength: <span id="currentStrength"></span></p>
               <p>Speed: <span id="currentSpeed"></span></p>
+              <p><span class="returnFromScreen"></span></p>
             </div>
           </div>
         </div>
-      </div>    
+        <div class="col-md-6">
+          <div class="card">
+            <div id="enemyDisplay">
+              <h4>Monster</h4>
+              <p>Health:<span id="enemyHealth"></span></p>
+              <p>Strength:<span id="enemyStrength"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="actions">
+        <button id="attack-button" onclick="attack()">Attack</button>
+        <button id="heal-button" onclick="heal()">Heal</button>
+      </div>  
     </div>
   </body>
 

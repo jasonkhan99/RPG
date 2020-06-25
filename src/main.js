@@ -15,8 +15,8 @@ $(document).ready(function () {
     const characterInventory = new InventoryEquip(inputtedWeapon, inputtedArmor);
     const character = new CharacterCreator(inputtedName, inputtedProfile, characterInventory, experience);
     character.addStatList();
-    character.addInventory();
+    character.addWeapon();
+    character.addArmor();
     console.log(character);
-    console.log(characterInventory);
   });
 });

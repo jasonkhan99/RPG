@@ -2,7 +2,7 @@
 export function CharacterCreator(name, profile, inventory, stats) {
   this.name = name;
   this.profile = profile;
-  this.inventory = [];
+  this.inventory = inventory;
   this.stats = stats;
   this.experience = 0;
 }
@@ -20,31 +20,29 @@ CharacterCreator.prototype.addStatList = function() {
   }
 }
 
-CharacterCreator.prototype.addInventory = function() {
-  if (this.inventory.includes("Power Fist")) {
+CharacterCreator.prototype.addWeapon = function() {
+  if (this.inventory.weapon.includes("Power Fist")) {
     this.stats.strength += 50;
     this.stats.defense -= 50;
-    this.inventory.push("Power Fist");
-  } else if (this.inventory.includes("Key Board")) {
+  } else if (this.inventory.weapon.includes("Key Board")) {
     this.stats.defense += 50;
     this.stats.speed -= 50;
-    this.inventory.push("Key Board");
-  } else if (this.inventory.includes("USB Rifle")) {
+  } else if (this.inventory.weapon.includes("USB Rifle")) {
     this.stats.speed += 50;
     this.stats.health -= 50;
-    this.inventory.push("USB Rifle");
-  } else if (this.inventory.includes("Old Tire Armor")) {
+  }
+}  
+
+CharacterCreator.prototype.addArmor = function() {
+  if (this.inventory.armor.includes("Old Tire Armor")) {
     this.stats.speed += 50;
     this.stats.defense -= 50;
-    this.inventory.push("Old Tire Armor");
-  } else if (this.inventory.includes("Scrap Metal Armor")) {
+  } else if (this.inventory.armor.includes("Scrap Metal Armor")) {
     this.stats.health += 50;
     this.stats.speed -= 50;
-    this.inventory.push("Scrap Metal Armor");
-  } else if (this.inventory.includes("Power Armor")) {
-    this.stats.defense +=50;
-    this.stats.speed -=50;
-    this.inventory.push("Power Armor");
+  } else if (this.inventory.armor.includes("Power Armor")) {
+    this.stats.defense += 50;
+    this.stats.speed -= 50;
   }
 }
 // inventory 
